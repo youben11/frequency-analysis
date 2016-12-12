@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(int argc,char** argv){
 
@@ -19,7 +20,7 @@ int main(int argc,char** argv){
 	printf("[*]Text to analyse : ");
 
 	while((c=getchar())!='\n')
-		if(c>=65&&c<=90||c>=97&&c<=122){
+		if(isalpha(c)){
 			typechar=(c<=90)?65:97;
 			c-=typechar;
 			frequence[c]++;
